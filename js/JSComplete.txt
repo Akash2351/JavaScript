@@ -166,5 +166,20 @@ this keyword, globally points to window object
 inside the function, regular function call, it also points to window objects..
 inside object, this points to the object
 
+DOM model:
+document object model
+document.querySelector() ...
+document.querySelector('#score-0').textContent = val;
+document.querySelector('#score-0').innerHtml ='<em>' + val + '</em>';
+document.querySelector('.dice').style.display = 'none';
+document.querySelector('.btn-roll').addEventListener('click', function() {
+ ....
+ });
+
+document.querySelector('.btn-roll').classList.remove('active');
+document.querySelector('.btn-roll').classList.add('active');
+document.querySelector('.btn-roll').classList.toggle('active');
+
+
 
 
