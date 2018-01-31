@@ -1,0 +1,170 @@
+JS is lightweight, cross platform, OO programming language
+released in 1995..
+ECMAScript 1, 1st standard 1997
+EcmaScript 5:  ES5 2009
+ES6, ES2015 : not much browser support 2016 ...should be good now
+
+
+JS Basics:
+
+<script src="script.js"></script>
+<script>
+    console.log('hello world');
+</script>
+
+Variables/data types:
+primitive data types (not objects): Number, String, Boolean,
+ Undefined - value assigned to a variable which does not have a value yet, Null
+Js has dynamic typing
+
+// single line comment
+/* ... */ multi line comment
+
+Operators:
+*, - , + ,++ , -- ,&&, ||, ! ...
+
+If else:
+var fullAge = true;
+
+if(fullAge) {
+    console.log(" he is an adult");
+} else {
+    console.log("He is still a child");
+}
+
+=== checks for value and type (does not do type co ercion)
+== checks for only value and not type (does type coercion - convert one type to another)
+
+var job = 'teacher';
+
+switch(job) {
+    case 'teacher' :
+        console.log('He is a teacher');
+        break;
+    case 'driver' :
+        console.log('He is a driver');
+        break;
+    default :
+         console.log('He is a human being');
+}
+
+coding challenge 1:
+var height1 = 180;
+var height2 = 160;
+var age1 = 22;
+var age2 = 25;
+
+var score1 = height1 + age1*5;
+var score2 = height2 + age2*5;
+
+if(score1 > score2){
+    console.log("player 1 won the game");
+} else if( score1 < score2){
+    console.log("player 2 won the game");
+} else {
+    console.log("Both players have same score!");
+}
+
+Functions:
+function calculateAge(yearOfBirth){
+    var age = 2018 - yearOfBirth;
+    return age;
+}
+
+var age = calculateAge(1990);
+console.log(age);
+
+Statements and expressions:
+function statement: -> function name1() { ... }
+function expression: var name1 = function() {...}
+
+Arrays:
+var names = ['john','jim','mark'];
+var years = [1990,'john',1989];
+var age = new Array(21,23,28);
+
+console.log(names) - > ['john','jim','mark']
+console.log(names)[0] - > john
+
+names.push(..) ..adds element to end of array;
+names.unshift(..) ...adds to the beginning of array;
+names.pop() .. removes an element from the end of array
+names.shift() ..removes the first element from array
+names.indexOf(..)  returns the index of element passed
+
+Objects and properties:
+object - key value pairs...
+order does not matter in object
+
+var john = {
+    name: 'John',
+    age: 25,
+    profession: 'teacher'
+};
+
+console.log(john.name);
+console.log(john['name']); //inside brackets, it should be string
+var nme = 'name';
+console.log(john[nme]);
+
+var jane = new Object();
+jane.name = 'Jane';
+jane.age  = 23;
+jane['job'] = 'driver';
+console.log(jane);
+
+functions in objects:
+var john = {
+    name: 'John',
+    age: 25,
+    profession: 'teacher'
+    calculateAge: function(yearOfBirth){
+        var temp = 2018 - yearOfBirth;
+        return temp;
+        //access parent object variable using this.age, this.profession
+    }
+};
+console.log(john.calculateAge(1990));
+
+Loops:
+
+for(var i =0; i< 10; i++){
+    console.log(i);
+}
+
+Coding Challenge 2:
+var years = [1990,1999,1987,2004];
+var res = [];
+
+function calculateAge(years){
+    var ages = [];
+    for(var i=0; i<years.length; i++){
+        ages[i] = 2018 - years[i];
+        if(ages[i] > 18){
+            res[i] = true;
+        } else {
+            res[i] = false;
+        }
+     console.log('Age:'+ages[i]+' res:'+res[i]);
+     return res;
+}
+
+Hoisting:
+works:
+calAge(1996);
+function calAge(dob){
+    console.log(2018-dob);
+}
+
+does not work: function expressions
+calAge2(1886);
+var calAge2 = function(dob){
+    console.log(2018-dob);
+}
+
+this keyword, globally points to window object
+inside the function, regular function call, it also points to window objects..
+inside object, this points to the object
+
+
+
